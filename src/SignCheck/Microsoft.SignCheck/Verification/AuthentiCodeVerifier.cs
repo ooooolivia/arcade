@@ -42,6 +42,11 @@ namespace Microsoft.SignCheck.Verification
 
         protected SignatureVerificationResult VerifyAuthentiCode(string path, string parent)
         {
+            if (path.EndsWith(".js"))
+            {
+                path = path.Substring(0);
+            }
+
             var svr = new SignatureVerificationResult(path, parent);
             uint hresult = AuthentiCode.IsSigned(path);
             svr.IsAuthentiCodeSigned = hresult == 0;

@@ -115,6 +115,11 @@ namespace Microsoft.SignCheck.Verification
         {
             foreach (string file in files)
             {
+                if (file.EndsWith("dotnet.js", StringComparison.OrdinalIgnoreCase))
+                {
+                    Log.WriteMessage("achei");
+                }
+
                 FileVerifier fileVerifier = GetFileVerifier(file);
                 SignatureVerificationResult result;
                 result = fileVerifier.VerifySignature(file, parent: null);

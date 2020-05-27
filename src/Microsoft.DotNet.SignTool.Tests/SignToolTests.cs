@@ -9,6 +9,8 @@ using System.IO;
 using System.IO.Packaging;
 using System.Linq;
 using Microsoft.Build.Framework;
+using Microsoft.Build.Utilities;
+using SignCheck;
 using TestUtilities;
 using Xunit;
 using Xunit.Abstractions;
@@ -231,6 +233,8 @@ namespace Microsoft.DotNet.SignTool.Tests
             AssertEx.Equal(expectedErrors ?? Array.Empty<string>(), engine.LogErrorEvents.Select(w => w.Message));
             AssertEx.Equal(expectedWarnings ?? Array.Empty<string>(), engine.LogWarningEvents.Select(w => $"{w.Code}: {w.Message}"));
         }
+
+
 
         [Fact]
         public void EmptySigningList()

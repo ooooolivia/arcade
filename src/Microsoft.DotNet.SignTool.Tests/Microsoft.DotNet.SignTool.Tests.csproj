@@ -12,6 +12,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Microsoft.DotNet.SignTool\Microsoft.DotNet.SignTool.csproj" />
+    <ProjectReference Include="..\SignCheck\Microsoft.SignCheck\Microsoft.DotNet.SignCheckLibrary.csproj" />
+    <ProjectReference Include="..\SignCheck\SignCheck\Microsoft.DotNet.SignCheck.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\Common\TestUtilities\AssertEx.cs" Link="TestUtilities\AssertEx.cs" />
